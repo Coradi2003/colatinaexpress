@@ -23,10 +23,10 @@ const CoverageSection = () => {
         >
           <h2 className="text-4xl sm:text-6xl tracking-tight mb-4">
             <span className="text-foreground">ÁREA DE</span>{" "}
-            <span className="text-gradient-gold">COBERTURA</span>
+            <span className="text-gradient-gold">ATUAÇÃO</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-lg mx-auto">
-            Atendemos todo o Norte e Sul do Espírito Santo. De segunda a sábado com veículos saindo diariamente.
+          <p className="text-muted-foreground text-lg max-w-lg mx-auto leading-relaxed">
+            Atuamos em diversas cidades do estado do Espírito Santo, oferecendo soluções ágeis, seguras e eficientes para o transporte de encomendas. Nossa cobertura abrange de norte a sul, garantindo praticidade e confiança para nossos clientes.
           </p>
         </motion.div>
 

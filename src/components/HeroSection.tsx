@@ -103,23 +103,7 @@ const HeroSection = () => {
             </a>
           </div>
 
-          <div className="mt-12 flex gap-8">
-            {[
-              { value: "10+", label: "Cidades" },
-              { value: "6x", label: "Por semana" },
-              { value: "24h", label: "Rapidez" },
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + i * 0.15 }}
-              >
-                <div className="text-3xl font-display text-gradient-gold">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+
         </motion.div>
       </div>
     </section>
