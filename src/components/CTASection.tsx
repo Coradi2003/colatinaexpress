@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
 import warehouseImage from "@/assets/warehouse.jpg";
 
@@ -34,15 +35,13 @@ const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://wa.me/5527997357959"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/solicitar-coleta"
               className="inline-flex items-center gap-3 rounded-lg bg-gradient-fire px-10 py-5 text-xl font-display tracking-wider text-primary-foreground transition-transform hover:scale-105 shadow-fire"
             >
               SOLICITAR COLETA
               <ArrowRight className="h-6 w-6" />
-            </a>
+            </Link>
             <a
               href="tel:+5527997357959"
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-card/60 px-8 py-5 text-xl font-display tracking-wide text-foreground backdrop-blur-sm transition-all hover:bg-card"

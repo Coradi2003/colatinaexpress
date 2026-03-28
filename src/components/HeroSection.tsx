@@ -39,7 +39,7 @@ const HeroSection = () => {
 
       {/* Pulsing Logo */}
       <motion.div
-        className="absolute right-[5%] lg:right-[15%] top-[20%] lg:top-[50%] -translate-y-1/2 z-20 pointer-events-none"
+        className="absolute right-[5%] lg:right-[15%] top-[45%] lg:top-[50%] -translate-y-1/2 z-20 pointer-events-none"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ 
           opacity: [0.7, 1, 0.7],
@@ -87,15 +87,13 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="https://wa.me/5527997357959"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/solicitar-coleta"
               className="inline-flex items-center justify-center gap-3 rounded-lg bg-gradient-fire px-8 py-4 text-lg font-display tracking-wide text-primary-foreground transition-all hover:scale-105 shadow-fire"
             >
               SOLICITAR COLETA
               <ArrowRight className="h-5 w-5" />
-            </a>
+            </Link>
             <Link
               to="/area-de-atuacao"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-card/50 px-8 py-4 text-lg font-display tracking-wide text-foreground backdrop-blur-sm transition-all hover:bg-card"

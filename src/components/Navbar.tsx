@@ -18,15 +18,13 @@ const Navbar = () => {
           <Link to="/quem-somos" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Quem Somos</Link>
           <Link to="/nossa-missao" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Nossa Missão</Link>
           <Link to="/area-de-atuacao" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Cobertura</Link>
-          <a
-            href="https://wa.me/5527997357959"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/solicitar-coleta"
             className="inline-flex items-center gap-2 rounded-lg bg-gradient-fire px-5 py-2.5 text-sm font-display tracking-wide text-primary-foreground transition-transform hover:scale-105"
           >
             <Phone className="h-4 w-4" />
             SOLICITAR COLETA
-          </a>
+          </Link>
         </div>
 
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -46,14 +44,13 @@ const Navbar = () => {
               <Link to="/quem-somos" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Quem Somos</Link>
               <Link to="/nossa-missao" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Nossa Missão</Link>
               <Link to="/area-de-atuacao" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Cobertura</Link>
-              <a
-                href="https://wa.me/5527997357959"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/solicitar-coleta"
+                onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-fire px-5 py-3 font-display tracking-wide text-primary-foreground"
               >
                 SOLICITAR COLETA
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
