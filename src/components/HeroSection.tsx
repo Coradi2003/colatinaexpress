@@ -39,7 +39,7 @@ const HeroSection = () => {
 
       {/* Pulsing Logo */}
       <motion.div
-        className="absolute right-[5%] lg:right-[15%] top-[12%] lg:top-[50%] -translate-y-1/2 z-20 pointer-events-none"
+        className="absolute right-[5%] lg:right-[10%] top-[12%] lg:top-[15%] -translate-y-1/2 z-20 pointer-events-none"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ 
           opacity: [0.7, 1, 0.7],
@@ -95,7 +95,7 @@ const HeroSection = () => {
             >
               SOLICITAR COLETA
               <ArrowRight className="h-5 w-5" />
-              <img src={logoImage} alt="Logo" className="w-14 h-auto object-contain md:hidden drop-shadow-sm ml-1" />
+              <img src={logoImage} alt="Logo" className="w-14 h-auto object-contain drop-shadow-sm ml-1" />
             </Link>
             <Link
               to="/area-de-atuacao"
