@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -9,13 +10,14 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-40 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between px-6">
-        <a href="/">
+        <Link to="/">
           <img src={logo} alt="Colatina Express Encomendas" className="h-14 w-auto" />
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#quem-somos" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Quem Somos</a>
-          <a href="#cobertura" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Cobertura</a>
+          <Link to="/quem-somos" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Quem Somos</Link>
+          <Link to="/nossa-missao" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Nossa Missão</Link>
+          <Link to="/area-de-atuacao" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Cobertura</Link>
           <a
             href="https://wa.me/5527997357959"
             target="_blank"
@@ -41,8 +43,9 @@ const Navbar = () => {
             className="md:hidden border-t border-border bg-background overflow-hidden"
           >
             <div className="flex flex-col gap-4 p-6">
-              <a href="#quem-somos" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Quem Somos</a>
-              <a href="#cobertura" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Cobertura</a>
+              <Link to="/quem-somos" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Quem Somos</Link>
+              <Link to="/nossa-missao" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Nossa Missão</Link>
+              <Link to="/area-de-atuacao" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Cobertura</Link>
               <a
                 href="https://wa.me/5527997357959"
                 target="_blank"

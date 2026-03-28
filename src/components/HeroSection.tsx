@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-van.jpg";
 import logoImage from "@/assets/logo.png";
@@ -95,12 +96,12 @@ const HeroSection = () => {
               SOLICITAR COLETA
               <ArrowRight className="h-5 w-5" />
             </a>
-            <a
-              href="#cobertura"
+            <Link
+              to="/area-de-atuacao"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-card/50 px-8 py-4 text-lg font-display tracking-wide text-foreground backdrop-blur-sm transition-all hover:bg-card"
             >
               VER COBERTURA
-            </a>
+            </Link>
           </div>
 
 
