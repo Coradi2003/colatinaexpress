@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-van.jpg";
+import logoImage from "@/assets/logo.png";
+
 
 const HeroSection = () => {
   return (
@@ -33,6 +35,27 @@ const HeroSection = () => {
           />
         ))}
       </div>
+
+      {/* Pulsing Logo */}
+      <motion.div
+        className="absolute right-[5%] lg:right-[15%] top-[45%] lg:top-[50%] -translate-y-1/2 z-20 pointer-events-none"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ 
+          opacity: [0.7, 1, 0.7],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{ 
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        <img
+          src={logoImage}
+          alt="Logo Colatina Express"
+          className="w-32 md:w-48 lg:w-64 h-auto drop-shadow-[0_0_30px_rgba(255,165,0,0.3)]"
+        />
+      </motion.div>
 
       <div className="container relative z-10 px-6 py-20 lg:py-0">
         <motion.div
