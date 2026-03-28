@@ -14,6 +14,7 @@ const Navbar = () => {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
+          <a href="#quem-somos" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Quem Somos</a>
           <a href="#cobertura" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Cobertura</a>
           <a
             href="https://wa.me/5527997357959"
@@ -40,6 +41,7 @@ const Navbar = () => {
             className="md:hidden border-t border-border bg-background overflow-hidden"
           >
             <div className="flex flex-col gap-4 p-6">
+              <a href="#quem-somos" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Quem Somos</a>
               <a href="#cobertura" onClick={() => setOpen(false)} className="text-muted-foreground hover:text-foreground">Cobertura</a>
               <a
                 href="https://wa.me/5527997357959"
