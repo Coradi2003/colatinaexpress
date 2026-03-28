@@ -39,7 +39,7 @@ const HeroSection = () => {
 
       {/* Pulsing Logo */}
       <motion.div
-        className="absolute right-[5%] lg:right-[15%] top-[45%] lg:top-[50%] -translate-y-1/2 z-20 pointer-events-none"
+        className="absolute right-[5%] lg:right-[15%] top-[80%] lg:top-[50%] -translate-y-1/2 z-20 pointer-events-none"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ 
           opacity: [0.7, 1, 0.7],
