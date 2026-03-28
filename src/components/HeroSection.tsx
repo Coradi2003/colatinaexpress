@@ -39,7 +39,7 @@ const HeroSection = () => {
 
       {/* Pulsing Logo */}
       <motion.div
-        className="absolute right-[5%] lg:right-[15%] top-[80%] lg:top-[50%] -translate-y-1/2 z-20 pointer-events-none"
+        className="absolute right-[5%] lg:right-[15%] top-[20%] lg:top-[50%] -translate-y-1/2 z-20 pointer-events-none"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ 
           opacity: [0.7, 1, 0.7],
@@ -58,27 +58,7 @@ const HeroSection = () => {
         />
       </motion.div>
 
-      {/* Secondary Mobile Logo (Top Right) */}
-      <motion.div
-        className="absolute right-[5%] top-[20%] -translate-y-1/2 z-20 pointer-events-none lg:hidden block"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ 
-          opacity: [0.7, 1, 0.7],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{ 
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1.5
-        }}
-      >
-        <img
-          src={logoImage}
-          alt="Logo Colatina Express"
-          className="w-20 md:w-24 h-auto drop-shadow-[0_0_30px_rgba(255,165,0,0.3)]"
-        />
-      </motion.div>
+
 
       <div className="container relative z-10 px-6 py-20 lg:py-0">
         <motion.div
@@ -115,6 +95,7 @@ const HeroSection = () => {
             >
               SOLICITAR COLETA
               <ArrowRight className="h-5 w-5" />
+              <img src={logoImage} alt="Logo" className="w-10 h-auto object-contain md:hidden drop-shadow-sm ml-1" />
             </Link>
             <Link
               to="/area-de-atuacao"
