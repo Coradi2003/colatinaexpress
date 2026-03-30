@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-van.jpg";
 import logoImage from "@/assets/logo.png";
+import InstallAppButton from "@/components/InstallAppButton";
 
 
 const HeroSection = () => {
@@ -37,26 +38,29 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Pulsing Logo */}
-      <motion.div
-        className="absolute right-[5%] lg:right-[10%] top-[12%] lg:top-[15%] -translate-y-1/2 z-20 pointer-events-none"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ 
-          opacity: [0.7, 1, 0.7],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{ 
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
-        <img
-          src={logoImage}
-          alt="Logo Colatina Express"
-          className="w-32 md:w-48 lg:w-64 h-auto drop-shadow-[0_0_30px_rgba(255,165,0,0.3)]"
-        />
-      </motion.div>
+      {/* Pulsing Logo + Install Button */}
+      <div className="absolute right-[5%] lg:right-[10%] top-[10%] lg:top-[12%] z-20 flex flex-col items-center gap-3">
+        <motion.div
+          className="pointer-events-none"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ 
+            opacity: [0.7, 1, 0.7],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <img
+            src={logoImage}
+            alt="Logo Colatina Express"
+            className="w-32 md:w-48 lg:w-64 h-auto drop-shadow-[0_0_30px_rgba(255,165,0,0.3)]"
+          />
+        </motion.div>
+        <InstallAppButton />
+      </div>
 
 
 
