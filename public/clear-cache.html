@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limpar Cache - Colatina Express</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #121212;
+      color: #fff;
+    }
+    button {
+      background: #dc2626;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 0;
+      width: 100%;
+    }
+    button:hover {
+      background: #b91c1c;
+    }
+    .status {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #1f2937;
+    }
+    .success { color: #10b981; }
+    .error { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <h1>🧹 Limpar Cache do Site</h1>
+  <p>Use esta página para limpar completamente o cache e service worker do site.</p>
+  
+  <button onclick="clearAll()">Limpar Tudo</button>
+  <button onclick="unregisterSW()">Desregistrar Service Worker</button>
+  <button onclick="clearCaches()">Limpar Cache</button>
+  
+  <div id="status" class="status"></div>
+
+  <script>
+    const status = document.getElementById('status');
+
+    async function clearAll() {
+      status.innerHTML = '<p>Limpando...</p>';
+      await unregisterSW();
+      await clearCaches();
+      status.innerHTML += '<p class="success">✅ Tudo limpo! Recarregue a página.</p>';
+      setTimeout(() => window.location.href = '/', 2000);
+    }
+
+    async function unregisterSW() {
+      if ('serviceWorker' in navigator) {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        for (let registration of registrations) {
+          await registration.unregister();
+        }
+        status.innerHTML = '<p class="success">✅ Service Worker desregistrado</p>';
+      } else {
+        status.innerHTML = '<p class="error">❌ Service Worker não suportado</p>';
+      }
+    }
+
+    async function clearCaches() {
+      if ('caches' in window) {
+        const names = await caches.keys();
+        await Promise.all(names.map(name => caches.delete(name)));
+        status.innerHTML = '<p class="success">✅ Cache limpo (' + names.length + ' caches removidos)</p>';
+      } else {
+        status.innerHTML = '<p class="error">❌ Cache API não suportada</p>';
+      }
+    }
+  </script>
+</body>
+</html>

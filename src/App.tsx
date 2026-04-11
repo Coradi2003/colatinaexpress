@@ -10,7 +10,17 @@ import NossaMissao from "./pages/NossaMissao.tsx";
 import AreaDeAtuacao from "./pages/AreaDeAtuacao.tsx";
 import SolicitarColeta from "./pages/SolicitarColeta.tsx";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      retryDelay: 1000,
+      staleTime: 5 * 60 * 1000, // 5 minutos
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
